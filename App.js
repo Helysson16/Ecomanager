@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Button, Image } from 'react-native';
 
 const App = () => {
   const [login, setLogin] = useState('');
@@ -14,6 +14,10 @@ const App = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
+      <Image
+          source={require('./img/Captura de tela de 2024-04-15 07-29-41.png')}
+          style={styles.logo}
+        />
         <Text style={styles.greeting}>Olá Helysson, Bem-vindo de volta</Text>
         <Text style={styles.goal}>Meta atual: 160KWH/mês</Text>
       </View>
@@ -42,6 +46,12 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
+  logo: {
+   // width: 100, // Ajusta a largura conforme necessário
+   // height: 100, // Ajusta a altura conforme necessário
+   // marginBottom: 16,
+  },
+  
   container: {
     flex: 1,
     padding: 16,
@@ -55,7 +65,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 8,
-    
+
   },
   goal: {
     fontSize: 16,

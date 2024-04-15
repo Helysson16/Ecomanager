@@ -13,8 +13,10 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.greeting}>Olá Helysson, Bem-vindo de volta</Text>
-      <Text style={styles.goal}>Meta atual: 160KWH/mês</Text>
+      <View style={styles.header}>
+        <Text style={styles.greeting}>Olá Helysson, Bem-vindo de volta</Text>
+        <Text style={styles.goal}>Meta atual: 160KWH/mês</Text>
+      </View>
 
       {/* Caixa de texto para login */}
       <TextInput
@@ -43,20 +45,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    alignItems: 'center', // Centraliza os elementos horizontalmente
+  },
+  header: {
+    marginBottom: 24,
   },
   greeting: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 16,
+    marginBottom: 8,
+    
   },
   goal: {
     fontSize: 16,
     color: 'green',
-    marginBottom: 24,
   },
   input: {
     height: 40,
+    width: '100%', // Ocupa toda a largura do contêiner pai
     borderColor: 'gray',
     borderWidth: 1,
     marginBottom: 16,

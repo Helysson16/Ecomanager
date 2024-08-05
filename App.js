@@ -5,7 +5,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
  
 const App = () => {
   const handleLogin = () => {
-    signInWithEmailAndPassword(auth, "aliciiaamorim2612@gmail.com", "amorinha1912x" )
+    signInWithEmailAndPassword(auth, "aliciiaamorim2612@gmail.com", "amorinha191" )
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;

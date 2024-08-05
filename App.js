@@ -1,7 +1,25 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, Button, Image } from 'react-native';
-
+import { auth } from './firebaseConfig';
+import { signInWithEmailAndPassword } from "firebase/auth";
+ 
 const App = () => {
+  const handleLogin = () => {
+    signInWithEmailAndPassword(auth, "aliciiaamorim2612@gmail.com", "amorinha1912x" )
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+   console.log(user);
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.error(errorCode);
+    console.error(errorMessage);
+  });
+  }
+
   const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
 
@@ -40,7 +58,7 @@ const App = () => {
       />
 
       {/* Botão Enviar */}
-      <Button title="Enviar" onPress={handleEnviar} />
+      <Button title="Enviar" onPress={handleLogin} />
     </View>
   );
 };
